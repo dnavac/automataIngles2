@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-automata',
+  templateUrl: './automata.component.html',
+  styleUrls: ['./automata.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'automataIngles2';
+export class AutomataComponent implements OnInit {
   currentState = 'S0';
   sentence = '';
   result = '';
 
-
   transitionTable: any = {
-    S0: { I: 'S1', You: 'S2', He: 'S3', She: 'S3', It: 'S3', They: 'S2' },
+    S0: { I: 'S1', You: 'S2', He: 'S3', She: 'S3', It: 'S3', They: 'S4' },
     S1: { am: 'S5' },
     S2: { are: 'S5' },
     S3: { is: 'S5' },
+    S4: { are: 'S5' }
   };
 
   checkSentence() {
@@ -46,4 +44,5 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
   }
+
 }
